@@ -1,0 +1,25 @@
+House
+______________________
+- streetNum: int
+- street: String
+- city: String
+- province: String
+- postalCode: String
+- size: double
+- stories: int
+- price: double
+- owner: Human
+_____________________
+House(n: int, s: String, c: String, pv: String, p: String, st: int, p: double)
++ getStreetNum(): int
++ getStreet(): String
++ getCity(): String
++ getProvince(): String
++ getPostalCode(): String
++ getAddress(): String
++ getStories(): int
++ getSize(): int
++ getPrice(): double
++ getOwner(): Human
++ purchaseHouse(buyer: Human): boolean
+- setOwner(own: Human): void

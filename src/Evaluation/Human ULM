@@ -1,0 +1,24 @@
+Person
+____________________
+- firstName: String
+- lastName: String
+- birthDate: String
+- age: int
+- height: double
+- weight: double
+- bankAccounts: Account[]
+____________________
+Person(first: String, last: String, birth: String, h: double, w: double)
++ setFirstName(n: String): void
++ getFirstName: String
++ setLastName(n: String): void
++ getLastName(): String
++ getAge(): int
++ getBirthDate: String
++ getHeight(): double
++ getWeight(): double
++ calculateAge(date: String): int
++ getBankAccounts(): Account[]
++ getTotalBalance(): double
++ addBankAccount(acct: Account): boolean
+- removeBankAccount(acct: Account): boolean
