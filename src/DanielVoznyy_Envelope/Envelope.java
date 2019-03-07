@@ -1,11 +1,9 @@
-package GUIs.DanielVoznyy_Envelope;
-
 import javax.swing.*;
 import java.awt.*;
 
 public class Envelope {
 
-    public Envelope(){
+    public Envelope() {
         JFrame frame = new JFrame("Envelope");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(400, 200);
@@ -13,8 +11,8 @@ public class Envelope {
         frame.add(new Drawing());
     }
 
-    class Drawing extends JComponent{
-        public void paint(Graphics g){
+    class Drawing extends JComponent {
+        public void paint(Graphics g) {
             g.setColor(Color.RED);
             g.fillRect(10, 10, 50, 50);
             g.setColor(Color.BLACK);

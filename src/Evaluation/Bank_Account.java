@@ -1,12 +1,10 @@
-package Evaluation;
-
 public class Bank_Account {
     public final long acct_num;
     private double balance;
     private String type;
     private float interest_rate;
 
-    Bank_Account(long acct, double bal, String ty, float interest){
+    Bank_Account(long acct, double bal, String ty, float interest) {
         acct_num = acct;
         balance = bal;
         type = ty;
@@ -26,13 +24,13 @@ public class Bank_Account {
     }
 
     public boolean withdrawal(double amt) {
-        if(balance - amt < 0)
+        if (balance - amt < 0)
             return false;
         balance -= amt;
         return true;
     }
 
-    public void applyInterest(){
+    public void applyInterest() {
         withdrawal(getBalance() * interest_rate);
     }
 } //Evaluation.Bank_Account class

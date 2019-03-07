@@ -5,7 +5,7 @@ import java.util.Random;
 public class Driver {
     public static void main(String[] args) {
         Student[] students = {new Student("Daniel"), new Student("Enfei"), new Student("Abhi"), new Student("Daniel's Clone"), new Student("Daniel's failed clone")}; //create a list of students
-        for(Student student : students){ //go through each student
+        for (Student student : students) { //go through each student
             student.setMarks(new Random().nextInt(100), new Random().nextInt(100)); //set marks to a random number between 0 and 100
             student.calcAverage(); //calculate average from both marks
             System.out.println(student.message()); //print average
@@ -23,13 +23,13 @@ public class Driver {
         double overallAverage = 0;
         int numberOfStudents = 0;
 
-        for (Student student: students) { //for every student in the array
-            if(student == null) //if the student does not exist
+        for (Student student : students) { //for every student in the array
+            if (student == null) //if the student does not exist
                 continue; //skip the student
 
             student.calcAverage(); //calculate their mark average
             overallAverage += student.average; //add their average to overall
-            numberOfStudents ++; //count student
+            numberOfStudents++; //count student
         }
         overallAverage /= numberOfStudents; //calculate proper average
         System.out.println("\nThe overall average of the students is: " + overallAverage); //print it

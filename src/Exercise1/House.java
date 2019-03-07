@@ -10,7 +10,7 @@ public class House {
     private boolean detached;
     private int stories;
 
-    public House(int n, String s, String c, String pv, String p, double si, boolean d, int l){
+    public House(int n, String s, String c, String pv, String p, double si, boolean d, int l) {
         street_num = n;
         street = s;
         city = c;
@@ -21,7 +21,7 @@ public class House {
         stories = l;
     }
 
-    public void displayAddress(){
+    public void displayAddress() {
         System.out.println(street_num + " " + street);
         System.out.println(city + ", " + province);
         System.out.println(postal_code);

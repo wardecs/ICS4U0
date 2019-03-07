@@ -1,5 +1,3 @@
-package Evaluation;
-
 import Exercise1.Car;
 
 public class Driver {

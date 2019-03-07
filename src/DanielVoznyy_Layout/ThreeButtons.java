@@ -1,11 +1,9 @@
-package GUIs.DanielVoznyy_Layout;
-
 import javax.swing.*;
 import java.awt.*;
 
 public class ThreeButtons {
 
-    public ThreeButtons(){
+    public ThreeButtons() {
         JFrame frame = new JFrame("3 Buttons");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(240, 90);

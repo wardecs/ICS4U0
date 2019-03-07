@@ -13,17 +13,17 @@ public class Animal {
         weight = w;
     }
 
-    public void feed(String v){ //feed method
+    public void feed(String v) { //feed method
         hungry = false;
-        if(v.equals("vegetables"))
+        if (v.equals("vegetables"))
             weight += 2;
-        if(v.equals("meat"))
+        if (v.equals("meat"))
             weight += 4;
         else
             weight += 1;
     }
 
-    public void sleep(){
+    public void sleep() {
         tired = false;
         weight -= 3;
     }
