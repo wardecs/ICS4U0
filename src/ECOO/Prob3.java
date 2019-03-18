@@ -33,11 +33,11 @@ public class Prob3 {
 
             System.out.println(x);
 
-            for (int casenum = 0; casenum < lines.size() - 1;) {
+            for (int k = 0; k < lines.size() - 1;) {
                 String failed = "FAIL: ";
                 for (int i = 0; i < cases; i++) {
-                    String in = lines.get(casenum + i + 1);
-                    String out = lines.get(casenum + i + cases + 2);
+                    String in = lines.get(k + i + 1);
+                    String out = lines.get(k + i + cases + 2);
                     List<Integer> inAr = new ArrayList<>();
                     for (String s : Arrays.asList(in.split(""))) {
                         inAr.add(Integer.parseInt(s));
@@ -70,7 +70,7 @@ public class Prob3 {
                     System.out.println("MATCH");
                 else
                     System.out.println(failed.substring(0, failed.length() - 1));
-                casenum+= cases + 1;
+                k+= cases + 1;
             }
         } catch(IOException e){
             System.out.println("OH NO!");

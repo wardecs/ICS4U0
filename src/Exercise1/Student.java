@@ -1,5 +1,3 @@
-package Exercise1;
-
 public class Student {
     public String name;
     public int mark1;

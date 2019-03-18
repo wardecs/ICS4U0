@@ -1,5 +1,3 @@
-import Exercise1.Car;
-
 public class Driver {
     public static void main(String[] args) {
         //create bank accounts
@@ -19,4 +17,4 @@ public class Driver {
 
 
     }
-} //Evaluation.Driver class
+} //Driver class

@@ -1,5 +1,3 @@
-package Exercise1;
-
 public class House {
     private int street_num;
     private String street;

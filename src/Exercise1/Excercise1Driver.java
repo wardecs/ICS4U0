@@ -1,8 +1,6 @@
-package Exercise1;
-
 import java.util.Random;
 
-public class Driver {
+public class Excercise1Driver {
     public static void main(String[] args) {
         Student[] students = {new Student("Daniel"), new Student("Enfei"), new Student("Abhi"), new Student("Daniel's Clone"), new Student("Daniel's failed clone")}; //create a list of students
         for (Student student : students) { //go through each student
@@ -71,4 +69,4 @@ public class Driver {
         dog.feed("meat"); //feed the dog meat
         dog.sleep(); //make dog sleep
     }
-} //Exercise1.Driver class
+} //Driver class
