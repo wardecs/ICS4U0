@@ -13,6 +13,7 @@ public class RectangularPrism extends Solid {
         this.width = w;
         this.length = d;
         this.height = h;
+
     }
 
     public double volume() {
