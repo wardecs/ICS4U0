@@ -10,6 +10,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/Graphics/DanielVoznyy_Envelope" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/Graphics/DanielVoznyy_Layout" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/Graphics/DanielVoznyy_OnOFF" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/DanielVoznyy1b/src" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
