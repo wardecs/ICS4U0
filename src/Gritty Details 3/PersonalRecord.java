@@ -1,3 +1,10 @@
+/**
+ * @author Daniel Voznyy
+ * Ms. Krasteva
+ * March 18, 2019
+ * A subclass of PersonalInfo with working methods
+ */
+
 import java.util.Calendar;
 
 public class PersonalRecord implements PersonalInfo {

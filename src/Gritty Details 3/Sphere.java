@@ -1,7 +1,14 @@
+/**
+ * @author Daniel Voznyy
+ * Ms. Krasteva
+ * March 18, 2019
+ * A subclass of Solid with area and surface area calculations for a sphere
+ */
+
 public class Sphere extends Solid {
     private double radius;
 
-    public Sphere(String name, double radius){
+    public Sphere(String name, double radius) {
         super(name);
         this.radius = radius;
     }
