@@ -15,7 +15,7 @@ public class JFrameTestApp {
       * parameters to be used when executing the program.
       */ 
   public static void main(String[] args) { 
-    new JFrameTest ();       // Create a FrameTest frame
+    new JFrameTest2 ();       // Create a FrameTest frame
     
   }
   
