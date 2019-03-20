@@ -5,8 +5,8 @@
  * <h2>Course Info:</h2>
  * ICS4U0 with Krasteva, V.
  *
- * @version 1 03.20.19
  * @author Daniel Voznyy
+ * @version 1 03.20.19
  */
 public class JFrameTestApp {
 
@@ -19,6 +19,6 @@ public class JFrameTestApp {
      *             parameters to be used when executing the program.
      */
     public static void main(String[] args) {
-        new JFrameTest();
+        new JFrameTest3();
     }
 }

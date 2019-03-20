@@ -1,7 +1,6 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -19,7 +18,8 @@ public class Prob3 {
                 while (!(l = b.readLine()).isEmpty()) {
                     lines.add(l);
                 }
-            }catch(NullPointerException e){}
+            } catch (NullPointerException e) {
+            }
 
 
             String[] vars = lines.get(0).split(" ");
@@ -33,7 +33,7 @@ public class Prob3 {
 
             System.out.println(x);
 
-            for (int k = 0; k < lines.size() - 1;) {
+            for (int k = 0; k < lines.size() - 1; ) {
                 String failed = "FAIL: ";
                 for (int i = 0; i < cases; i++) {
                     String in = lines.get(k + i + 1);
@@ -66,13 +66,13 @@ public class Prob3 {
                         failed += i + 1 + ",";
                 }
                 System.out.println();
-                if(failed.equals("FAIL: ")) //we know its not failed
+                if (failed.equals("FAIL: ")) //we know its not failed
                     System.out.println("MATCH");
                 else
                     System.out.println(failed.substring(0, failed.length() - 1));
-                k+= cases + 1;
+                k += cases + 1;
             }
-        } catch(IOException e){
+        } catch (IOException e) {
             System.out.println("OH NO!");
         }
     }

@@ -4,9 +4,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * The JFrameTest2 class creates the application window,
- * menu bar, File and Help menus, and the Quit, Help, and About menu items. It then adds
- * the Quit item to the File menu, then the Help and About items in the
+ * The JFrameTest3 class creates the application window,
+ * TextTest object, menu bar, File and Help menus, and the Quit, Help,
+ * and About menu items. The TextTest object contains the contents
+ * of this window, and allows a user to calculate the square of a number.
+ * It then adds the Quit item to the File menu, then the Help and About items in the
  * Help menu, then both menus to the menu bar. Help and About show a dialog box
  * when clicked, which contains a button that closes them. About shows a message
  * about me.
@@ -18,10 +20,10 @@ import java.awt.event.ActionListener;
  * @author Daniel Voznyy
  * @version 1 03.20.19
  */
-public class JFrameTest2 extends JFrame implements ActionListener {
+public class JFrameTest3 extends JFrame implements ActionListener {
     /**
      * The class constructor passes a String title when it creates
-     * the superclass object. It then creates the application window,
+     * the superclass object. It then creates the application window, TextTest object
      * menu bar, two menus, one labelled "File", one labelled "Help,
      * three menu items, one labelled "Quit", one "Help", one "About".
      * It then adds the Quit menu item to the File menu, the Help and About
@@ -32,8 +34,10 @@ public class JFrameTest2 extends JFrame implements ActionListener {
      * window will close if the user clicks the 'x' button,
      * and that pressing the Quit menu item will quite the program.
      */
-    public JFrameTest2() {
+    public JFrameTest3() {
         super("JFrame Test");
+        TextTest t = new TextTest();
+        add(t);
 
         JMenuItem quitItem = new JMenuItem("Quit");
         JMenu fileMenu = new JMenu("File");
@@ -70,8 +74,10 @@ public class JFrameTest2 extends JFrame implements ActionListener {
         JDialog myDialog = setupJDialog(new JDialog(this, "Help me"));
         myDialog.setSize(100, 100);
 
-        JButton helpButton = new JButton(("Help me!"));
-        helpButton.addActionListener(new ActionListener() {
+        JLabel label = new JLabel("Help me!");
+
+        JButton close = new JButton(("Close"));
+        close.addActionListener(new ActionListener() {
             /**
              * Action event listener that closes dialog when the button is pressed.
              *
@@ -83,7 +89,8 @@ public class JFrameTest2 extends JFrame implements ActionListener {
             }
         });
 
-        myDialog.add(helpButton);
+        myDialog.add(label);
+        myDialog.add(close);
     }
 
     /**
@@ -93,9 +100,11 @@ public class JFrameTest2 extends JFrame implements ActionListener {
     public void aboutDialog() {
         JDialog myDialog = setupJDialog(new JDialog(this, "About me"));
         myDialog.setSize(300, 300);
+        //TODO: Make something about myself and change dialog size accordingly
+        JLabel label = new JLabel("Here is something about me");
 
-        JButton aboutButton = new JButton(("Here is something about me"));
-        aboutButton.addActionListener(new ActionListener() {
+        JButton close = new JButton(("Close"));
+        close.addActionListener(new ActionListener() {
             /**
              * Action event listener that closes dialog when the button is pressed.
              *
@@ -106,7 +115,9 @@ public class JFrameTest2 extends JFrame implements ActionListener {
                 myDialog.dispose();
             }
         });
-        myDialog.add(aboutButton);
+
+        myDialog.add(label);
+        myDialog.add(close);
     }
 
     /**

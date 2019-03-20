@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <drjava version="drjava-20140826-r5761">
-  <project autorefresh="false" build="bin/" root="src/" work="">
+  <project autorefresh="true" build="bin/" root="src/" work="">
     <createjar file=""/>
     <source>
       <file active="true" name="JFrameTest.java" package="" timestamp="28-Jan-2015 14:08:18">
