@@ -71,10 +71,8 @@ public class JFrameTest2 extends JFrame implements ActionListener {
         myDialog.setSize(100, 100);
         myDialog.setResizable(false);
         myDialog.setLayout(new FlowLayout());
-        myDialog.setLocationRelativeTo(this);
-        myDialog.setVisible(true);
 
-        JButton helpButton = new JButton(("Help me!"));
+        JButton helpButton = new JButton("Help me!");
         helpButton.addActionListener(new ActionListener() {
             /**
              * Action event listener that closes dialog when the button is pressed.
@@ -88,6 +86,9 @@ public class JFrameTest2 extends JFrame implements ActionListener {
         });
 
         myDialog.add(helpButton);
+
+        myDialog.setLocationRelativeTo(this);
+        myDialog.setVisible(true);
     }
 
     /**
@@ -96,15 +97,12 @@ public class JFrameTest2 extends JFrame implements ActionListener {
      */
     public void aboutDialog() {
         JDialog myDialog = new JDialog(this, "About me");
-        myDialog.setSize(300, 300);
+        myDialog.setSize(700, 75);
         myDialog.setResizable(false);
         myDialog.setLayout(new FlowLayout());
-        myDialog.setLocationRelativeTo(this);
-        myDialog.setVisible(true);
 
-        JButton aboutButton = new JButton("Here is something you may not know about me: I do a bit of game development outside school, " +
-                "and did a competition where I made a game in 3 days last summer. " +
-                "I haven't worked that much until MyCreation, oh no the flashbacks.");
+        JButton aboutButton = new JButton("I did a competition where I made a game in 3 days last summer. I hadn't worked that much until MyCreation");
+
         aboutButton.addActionListener(new ActionListener() {
             /**
              * Action event listener that closes dialog when the button is pressed.
@@ -116,7 +114,11 @@ public class JFrameTest2 extends JFrame implements ActionListener {
                 myDialog.dispose();
             }
         });
+
         myDialog.add(aboutButton);
+
+        myDialog.setLocationRelativeTo(this);
+        myDialog.setVisible(true);
     }
 
     /**

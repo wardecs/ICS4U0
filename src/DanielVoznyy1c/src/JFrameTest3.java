@@ -75,12 +75,10 @@ public class JFrameTest3 extends JFrame implements ActionListener {
         myDialog.setSize(100, 100);
         myDialog.setResizable(false);
         myDialog.setLayout(new FlowLayout());
-        myDialog.setLocationRelativeTo(this);
-        myDialog.setVisible(true);
 
         JLabel label = new JLabel("Help me!");
 
-        JButton close = new JButton(("Close"));
+        JButton close = new JButton("Close");
         close.addActionListener(new ActionListener() {
             /**
              * Action event listener that closes dialog when the button is pressed.
@@ -95,6 +93,9 @@ public class JFrameTest3 extends JFrame implements ActionListener {
 
         myDialog.add(label);
         myDialog.add(close);
+
+        myDialog.setLocationRelativeTo(this);
+        myDialog.setVisible(true);
     }
 
     /**
@@ -103,15 +104,14 @@ public class JFrameTest3 extends JFrame implements ActionListener {
      */
     public void aboutDialog() {
         JDialog myDialog = new JDialog(this, "About me");
-        myDialog.setSize(300, 300);
+        myDialog.setSize(650, 100);
         myDialog.setResizable(false);
         myDialog.setLayout(new FlowLayout());
-        myDialog.setLocationRelativeTo(this);
-        myDialog.setVisible(true);
-        //TODO: Make something about myself and change dialog size accordingly
-        JLabel label = new JLabel ("Here is something");
 
-        JButton close = new JButton(("Close"));
+        JLabel label = new JLabel("I did a competition where I made a game in 3 days last summer. I hadn't worked that much until MyCreation");
+
+
+        JButton close = new JButton("Close");
         close.addActionListener(new ActionListener() {
             /**
              * Action event listener that closes dialog when the button is pressed.
@@ -126,6 +126,9 @@ public class JFrameTest3 extends JFrame implements ActionListener {
 
         myDialog.add(label);
         myDialog.add(close);
+
+        myDialog.setLocationRelativeTo(this);
+        myDialog.setVisible(true);
     }
 
     /**
