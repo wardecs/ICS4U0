@@ -67,8 +67,12 @@ public class JFrameTest2 extends JFrame implements ActionListener {
      * Closes when button inside is pressed.
      */
     public void helpDialog() {
-        JDialog myDialog = setupJDialog(new JDialog(this, "Help me"));
+        JDialog myDialog = new JDialog(this, "Help me");
         myDialog.setSize(100, 100);
+        myDialog.setResizable(false);
+        myDialog.setLayout(new FlowLayout());
+        myDialog.setLocationRelativeTo(this);
+        myDialog.setVisible(true);
 
         JButton helpButton = new JButton(("Help me!"));
         helpButton.addActionListener(new ActionListener() {
@@ -91,10 +95,16 @@ public class JFrameTest2 extends JFrame implements ActionListener {
      * Closes when button inside is pressed.
      */
     public void aboutDialog() {
-        JDialog myDialog = setupJDialog(new JDialog(this, "About me"));
+        JDialog myDialog = new JDialog(this, "About me");
         myDialog.setSize(300, 300);
+        myDialog.setResizable(false);
+        myDialog.setLayout(new FlowLayout());
+        myDialog.setLocationRelativeTo(this);
+        myDialog.setVisible(true);
 
-        JButton aboutButton = new JButton(("Here is something about me"));
+        JButton aboutButton = new JButton("Here is something you may not know about me: I do a bit of game development outside school, " +
+                "and did a competition where I made a game in 3 days last summer. " +
+                "I haven't worked that much until MyCreation, oh no the flashbacks.");
         aboutButton.addActionListener(new ActionListener() {
             /**
              * Action event listener that closes dialog when the button is pressed.
@@ -107,20 +117,6 @@ public class JFrameTest2 extends JFrame implements ActionListener {
             }
         });
         myDialog.add(aboutButton);
-    }
-
-    /**
-     * A quick method to setup basic parameters each dialog will use for sure (to avoid rewriting lines of code).
-     *
-     * @param dialog A dialog to be setup.
-     * @return The setup dialog.
-     */
-    private JDialog setupJDialog(JDialog dialog) {
-        dialog.setResizable(false);
-        dialog.setLayout(new FlowLayout());
-        dialog.setLocationRelativeTo(this);
-        dialog.setVisible(true);
-        return dialog;
     }
 
     /**

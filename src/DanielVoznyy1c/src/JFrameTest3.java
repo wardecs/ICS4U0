@@ -71,8 +71,12 @@ public class JFrameTest3 extends JFrame implements ActionListener {
      * Closes when button inside is pressed.
      */
     public void helpDialog() {
-        JDialog myDialog = setupJDialog(new JDialog(this, "Help me"));
+        JDialog myDialog = new JDialog(this, "Help me");
         myDialog.setSize(100, 100);
+        myDialog.setResizable(false);
+        myDialog.setLayout(new FlowLayout());
+        myDialog.setLocationRelativeTo(this);
+        myDialog.setVisible(true);
 
         JLabel label = new JLabel("Help me!");
 
@@ -98,10 +102,14 @@ public class JFrameTest3 extends JFrame implements ActionListener {
      * Closes when button inside is pressed.
      */
     public void aboutDialog() {
-        JDialog myDialog = setupJDialog(new JDialog(this, "About me"));
+        JDialog myDialog = new JDialog(this, "About me");
         myDialog.setSize(300, 300);
+        myDialog.setResizable(false);
+        myDialog.setLayout(new FlowLayout());
+        myDialog.setLocationRelativeTo(this);
+        myDialog.setVisible(true);
         //TODO: Make something about myself and change dialog size accordingly
-        JLabel label = new JLabel("Here is something about me");
+        JLabel label = new JLabel ("Here is something");
 
         JButton close = new JButton(("Close"));
         close.addActionListener(new ActionListener() {
@@ -118,20 +126,6 @@ public class JFrameTest3 extends JFrame implements ActionListener {
 
         myDialog.add(label);
         myDialog.add(close);
-    }
-
-    /**
-     * A quick method to setup basic parameters each dialog will use for sure (to avoid rewriting lines of code).
-     *
-     * @param dialog A dialog to be setup.
-     * @return The setup dialog.
-     */
-    private JDialog setupJDialog(JDialog dialog) {
-        dialog.setResizable(false);
-        dialog.setLayout(new FlowLayout());
-        dialog.setLocationRelativeTo(this);
-        dialog.setVisible(true);
-        return dialog;
     }
 
     /**
