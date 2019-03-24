@@ -3,14 +3,8 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/src/ECOO" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/Evaluation" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/Exercise1" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/Gritty Details 3" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/Graphics/DanielVoznyy_Envelope" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/Graphics/DanielVoznyy_Layout" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/Graphics/DanielVoznyy_OnOFF" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/DanielVoznyy1c/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/JFrame/DanielVoznyy1c/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/1. JFrame/2. Layouts/src" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
