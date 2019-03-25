@@ -16,7 +16,7 @@ import java.awt.event.ActionListener;
  * @author Daniel Voznyy
  * @version 1 03.29.19
  */
-public class SpringLayoutDanielVoznyy extends JFrame implements ActionListener {
+public class GridBagLayoutDanielVoznyy extends JFrame implements ActionListener {
     /**
      * The class constructor passes a String title when it creates
      * the superclass object. It then creates the application window,
@@ -29,9 +29,9 @@ public class SpringLayoutDanielVoznyy extends JFrame implements ActionListener {
      * window will close if the user clicks the 'x' button,
      * and that pressing the Quit menu item will quite the program.
      */
-    public SpringLayoutDanielVoznyy() {
-        super("SpringLayout");
-        SpringLayout layout = new SpringLayout();
+    public GridBagLayoutDanielVoznyy() {
+        super("GridBagLayout");
+        GridBagLayout layout = new GridBagLayout();
         setLayout(layout);
 
 //        JPanel panel = new JPanel(new BorderLayout());
@@ -48,24 +48,32 @@ public class SpringLayoutDanielVoznyy extends JFrame implements ActionListener {
 //        panel.add(south, BorderLayout.SOUTH);
 //
 //        add(panel);
+        GridBagConstraints c = new GridBagConstraints();
+        c.fill = GridBagConstraints.HORIZONTAL;
+
+        c.weightx = 0.5;
+        c.gridx = 0;
+        c.gridy = 0;
 
         JButton a = new JButton("A");
+        add(a, c);
+
+
+        c.gridx = 1;
         JButton b = new JButton("B");
+        add(b, c);
 
-        add(a);
-        add(b);
+        c.gridx = 2;
+        JButton d = new JButton("D");
+        add(d, c);
 
-//        layout.putConstraint(SpringLayout.WEST, a, 6, SpringLayout.WEST, this);
-//        layout.putConstraint(SpringLayout.NORTH, a, 6, SpringLayout.NORTH, this);
-        layout.putConstraint(SpringLayout.NORTH, b, 50, SpringLayout.NORTH, this);
-        layout.putConstraint(SpringLayout.EAST, b, 150, SpringLayout.EAST, this);
-
-        layout.putConstraint(SpringLayout.SOUTH, a, 6, SpringLayout.NORTH, b);
-        layout.putConstraint(SpringLayout.SOUTH, b, 6, SpringLayout.NORTH, a);
-
-
-//        layout.putConstraint(SpringLayout.EAST, getContentPane(), 6, SpringLayout.EAST, b);
-//        layout.putConstraint(SpringLayout.SOUTH, getContentPane(), 6, SpringLayout.SOUTH, b);
+        c.ipady = 40;      //make this component tall
+        c.weightx = 0.0;
+        c.gridwidth = 3;
+        c.gridx = 0;
+        c.gridy = 1;
+        JButton e = new JButton("E");
+        add(e, c);
 
 
         setSize(200, 200);
@@ -95,6 +103,6 @@ public class SpringLayoutDanielVoznyy extends JFrame implements ActionListener {
      *             parameters to be used when executing the program.
      */
     public static void main(String[] args) {
-        new SpringLayoutDanielVoznyy();
+        new GridBagLayoutDanielVoznyy();
     }
 }
