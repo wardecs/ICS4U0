@@ -16,7 +16,7 @@ import java.awt.event.ActionListener;
  * @author Daniel Voznyy
  * @version 1 03.29.19
  */
-public class GridBagLayoutDanielVoznyy extends JFrame implements ActionListener {
+public class GridBagLayoutDanielVoznyy extends JPanel {
     /**
      * The class constructor passes a String title when it creates
      * the superclass object. It then creates the application window,
@@ -30,24 +30,9 @@ public class GridBagLayoutDanielVoznyy extends JFrame implements ActionListener 
      * and that pressing the Quit menu item will quite the program.
      */
     public GridBagLayoutDanielVoznyy() {
-        super("GridBagLayout");
         GridBagLayout layout = new GridBagLayout();
         setLayout(layout);
 
-//        JPanel panel = new JPanel(new BorderLayout());
-//        panel.setBackground(Color.black);
-
-//        JButton north = new JButton("NORTH");
-//        JButton west = new JButton("WEST");
-//        JButton east = new JButton("EAST");
-//        JButton south = new JButton("SOUTH");
-//
-//        panel.add(north, BorderLayout.NORTH);
-//        panel.add(west, BorderLayout.WEST);
-//        panel.add(east, BorderLayout.EAST);
-//        panel.add(south, BorderLayout.SOUTH);
-//
-//        add(panel);
         GridBagConstraints c = new GridBagConstraints();
         c.fill = GridBagConstraints.HORIZONTAL;
 
@@ -68,11 +53,6 @@ public class GridBagLayoutDanielVoznyy extends JFrame implements ActionListener 
         JButton d = new JButton("Add");
         add(d, c);
 
-
-
-        setSize(400, 200);
-        setVisible(true);
-
         JButton ee = new JButton("E");
         d.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -85,31 +65,5 @@ public class GridBagLayoutDanielVoznyy extends JFrame implements ActionListener 
                 add(ee, c);
             }
         });
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-    }
-
-
-    /**
-     * Action event listener for each menu item.
-     *
-     * @param ae The action event performed.
-     */
-    public void actionPerformed(ActionEvent ae) {
-        if (ae.getActionCommand().equals("Quit")) ;
-        dispose();
-
-    }
-
-
-    /**
-     * Description of main(String [] args)
-     * This method calls the layout's constructor to
-     * create the application.
-     *
-     * @param args [ ]  String array that allows command line
-     *             parameters to be used when executing the program.
-     */
-    public static void main(String[] args) {
-        new GridBagLayoutDanielVoznyy();
     }
 }

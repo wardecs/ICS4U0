@@ -16,7 +16,7 @@ import java.awt.event.ActionListener;
  * @author Daniel Voznyy
  * @version 1 03.29.19
  */
-public class SpringLayoutDanielVoznyy extends JFrame implements ActionListener {
+public class SpringLayoutDanielVoznyy extends JPanel {
     /**
      * The class constructor passes a String title when it creates
      * the superclass object. It then creates the application window,
@@ -30,7 +30,6 @@ public class SpringLayoutDanielVoznyy extends JFrame implements ActionListener {
      * and that pressing the Quit menu item will quite the program.
      */
     public SpringLayoutDanielVoznyy() {
-        super("SpringLayout");
         SpringLayout layout = new SpringLayout();
         setLayout(layout);
 
@@ -57,44 +56,14 @@ public class SpringLayoutDanielVoznyy extends JFrame implements ActionListener {
 
 //        layout.putConstraint(SpringLayout.WEST, a, 6, SpringLayout.WEST, this);
 //        layout.putConstraint(SpringLayout.NORTH, a, 6, SpringLayout.NORTH, this);
-        layout.putConstraint(SpringLayout.NORTH, b, 50, SpringLayout.NORTH, this);
-        layout.putConstraint(SpringLayout.EAST, b, 150, SpringLayout.EAST, this);
+//        layout.putConstraint(SpringLayout.NORTH, b, 50, SpringLayout.NORTH, this);
+//        layout.putConstraint(SpringLayout.EAST, b, 150, SpringLayout.EAST, this);
 
-        layout.putConstraint(SpringLayout.SOUTH, a, 6, SpringLayout.NORTH, b);
-        layout.putConstraint(SpringLayout.SOUTH, b, 6, SpringLayout.NORTH, a);
+//        layout.putConstraint(SpringLayout.SOUTH, a, 6, SpringLayout.NORTH, b);
+        layout.putConstraint(SpringLayout.NORTH, b, 6, SpringLayout.SOUTH, a);
 
 
 //        layout.putConstraint(SpringLayout.EAST, getContentPane(), 6, SpringLayout.EAST, b);
 //        layout.putConstraint(SpringLayout.SOUTH, getContentPane(), 6, SpringLayout.SOUTH, b);
-
-
-        setSize(200, 200);
-        setVisible(true);
-
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-    }
-
-
-    /**
-     * Action event listener for each menu item.
-     *
-     * @param ae The action event performed.
-     */
-    public void actionPerformed(ActionEvent ae) {
-        if (ae.getActionCommand().equals("Quit")) ;
-        dispose();
-    }
-
-
-    /**
-     * Description of main(String [] args)
-     * This method calls the layout's constructor to
-     * create the application.
-     *
-     * @param args [ ]  String array that allows command line
-     *             parameters to be used when executing the program.
-     */
-    public static void main(String[] args) {
-        new SpringLayoutDanielVoznyy();
     }
 }
