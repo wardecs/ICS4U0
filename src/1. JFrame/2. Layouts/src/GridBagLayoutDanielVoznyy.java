@@ -51,7 +51,7 @@ public class GridBagLayoutDanielVoznyy extends JFrame implements ActionListener 
         GridBagConstraints c = new GridBagConstraints();
         c.fill = GridBagConstraints.HORIZONTAL;
 
-        c.weightx = 0.5;
+        c.weightx = 2;
         c.gridx = 0;
         c.gridy = 0;
 
@@ -59,26 +59,32 @@ public class GridBagLayoutDanielVoznyy extends JFrame implements ActionListener 
         add(a, c);
 
 
+        c.weightx = 0.5;
         c.gridx = 1;
         JButton b = new JButton("B");
         add(b, c);
 
         c.gridx = 2;
-        JButton d = new JButton("D");
+        JButton d = new JButton("Add");
         add(d, c);
 
-        c.ipady = 40;      //make this component tall
-        c.weightx = 0.0;
-        c.gridwidth = 3;
-        c.gridx = 0;
-        c.gridy = 1;
-        JButton e = new JButton("E");
-        add(e, c);
 
 
-        setSize(200, 200);
+        setSize(400, 200);
         setVisible(true);
 
+        JButton ee = new JButton("E");
+        d.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+//                c.ipady = 40;      //make this component tall
+//                c.weightx = 0.0;
+//                c.gridwidth = 3;
+                c.gridx = 3;
+                c.gridy = 0;
+                d.setText("Added");
+                add(ee, c);
+            }
+        });
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
 
@@ -91,6 +97,7 @@ public class GridBagLayoutDanielVoznyy extends JFrame implements ActionListener 
     public void actionPerformed(ActionEvent ae) {
         if (ae.getActionCommand().equals("Quit")) ;
         dispose();
+
     }
 
 
