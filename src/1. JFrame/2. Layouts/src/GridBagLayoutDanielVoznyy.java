@@ -4,11 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- * The JFrameTest class creates the application window,
- * menu bar, File and Help menus and the Quit and Help menu items. It then adds
- * the menu items to the File, then Help menus respectively, then both menus to the
- * menu bar. It also ensures that the window will close if the user
- * clicks the 'x' button.
+ *
  *
  * <h2>Course Info:</h2>
  * ICS4U0 with Krasteva, V.
@@ -17,52 +13,55 @@ import java.awt.event.ActionListener;
  * @version 1 03.29.19
  */
 public class GridBagLayoutDanielVoznyy extends JPanel {
-    /**
-     * The class constructor passes a String title when it creates
-     * the superclass object. It then creates the application window,
-     * menu bar, two menus, one labelled "File", one labelled "Help,
-     * two menu items, one labelled "Quit", one labelled "Help".
-     * It then adds the Quit menu item to the File menu, the Help
-     * item to the Help menu, and both menus to the menu bar.
-     * It sets the size of the Frame to 400x400, and
-     * ensures it will be visible. It also ensures that the
-     * window will close if the user clicks the 'x' button,
-     * and that pressing the Quit menu item will quite the program.
-     */
     public GridBagLayoutDanielVoznyy() {
+        setLayout(new GridBagLayout());
         GridBagLayout layout = new GridBagLayout();
         setLayout(layout);
 
-        GridBagConstraints c = new GridBagConstraints();
-        c.fill = GridBagConstraints.HORIZONTAL;
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.fill = GridBagConstraints.HORIZONTAL;
 
-        c.weightx = 2;
-        c.gridx = 0;
-        c.gridy = 0;
+        gbc.weightx = 2;
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.anchor = GridBagConstraints.NORTH;
+        gbc.weighty = 1;
+        gbc.ipady = 20;
+
 
         JButton a = new JButton("A");
-        add(a, c);
+        add(a, gbc);
 
-
-        c.weightx = 0.5;
-        c.gridx = 1;
+        gbc.weightx = 0.5;
+        gbc.gridx = 1;
         JButton b = new JButton("B");
-        add(b, c);
+        add(b, gbc);
 
-        c.gridx = 2;
+        gbc.gridx = 2;
         JButton d = new JButton("Add");
-        add(d, c);
+        add(d, gbc);
 
-        JButton ee = new JButton("E");
+        JButton ee = new JButton("Add Down");
         d.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-//                c.ipady = 40;      //make this component tall
-//                c.weightx = 0.0;
-//                c.gridwidth = 3;
-                c.gridx = 3;
-                c.gridy = 0;
+                gbc.gridx = 3;
+                gbc.gridy = 0;
                 d.setText("Added");
-                add(ee, c);
+                add(ee, gbc);
+                d.removeActionListener(this); //stops someone from pressing the button and calling this method again
+            }
+        });
+
+        ee.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                gbc.gridwidth = 4;
+                gbc.weighty = 10;
+                gbc.gridx = 0;
+                gbc.ipady = 1;
+                gbc.gridy++;
+                ee.setText("Added " + gbc.gridy);
+                add(new JButton("Button" + gbc.gridy), gbc);
             }
         });
     }
