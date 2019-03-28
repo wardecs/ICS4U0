@@ -29,7 +29,7 @@ public class CardLayoutApp extends JFrame {
         allSpring.setPreferredSize(new Dimension(100, 100));
         all.add(allSpring, BorderLayout.NORTH);
 
-        JPanel allList = new JPanel();
+        JPanel allList = new JPanel(new GridLayout(4, 1));
         allList.add(new JLabel("GridBagLayout - Daniel"));
         allList.add(new JLabel("SpringLayout - Daniel"));
         allList.add(new JLabel("FlowLayout - Enfei"));
@@ -38,15 +38,15 @@ public class CardLayoutApp extends JFrame {
         all.add(allList, BorderLayout.CENTER);
 
         JPanel allGrid = new GridBagLayoutDanielVoznyy();
-        allGrid.setPreferredSize(new Dimension(150, 100));
+        allGrid.setPreferredSize(new Dimension(250, 100));
         all.add(allGrid, BorderLayout.WEST);
 
         JPanel allGroup = new GridBagLayoutDanielVoznyy();
-        allGroup.setPreferredSize(new Dimension(150, 100));
+        allGroup.setPreferredSize(new Dimension(250, 100));
         all.add(allGroup, BorderLayout.EAST);
 
         JPanel allFlow = new SpringLayoutDanielVoznyy();
-        allFlow.setPreferredSize(new Dimension(150, 100)); //TODO set proper dimensions
+        allFlow.setPreferredSize(new Dimension(100, 100)); //TODO set proper dimensions
         all.add(allFlow, BorderLayout.SOUTH);
 
 
@@ -57,8 +57,8 @@ public class CardLayoutApp extends JFrame {
 
         add(tabbedPane, BorderLayout.CENTER);
 
-        setMinimumSize(new Dimension(500, 500));
-        setSize(500, 500);
+        setMinimumSize(new Dimension(800, 800));
+        setSize(800, 800);
         setVisible(true);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }

@@ -1,4 +1,7 @@
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  *
@@ -10,41 +13,41 @@ import javax.swing.*;
  * @version 1 03.29.19
  */
 public class SpringLayoutDanielVoznyy extends JPanel {
+    int pad = 100;
+
     public SpringLayoutDanielVoznyy() {
         SpringLayout layout = new SpringLayout();
         setLayout(layout);
 
-//        JPanel panel = new JPanel(new BorderLayout());
-//        panel.setBackground(Color.black);
+        JButton anchor = new JButton("SpringLayout anchor");
+        add(anchor);
 
-//        JButton north = new JButton("NORTH");
-//        JButton west = new JButton("WEST");
-//        JButton east = new JButton("EAST");
-//        JButton south = new JButton("SOUTH");
-//
-//        panel.add(north, BorderLayout.NORTH);
-//        panel.add(west, BorderLayout.WEST);
-//        panel.add(east, BorderLayout.EAST);
-//        panel.add(south, BorderLayout.SOUTH);
-//
-//        add(panel);
+        JPanel moveButtons = new JPanel(new GridLayout(1, 2));
+        JButton increase = new JButton("Increase pad");
+        increase.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                pad += 50;
+                layout.putConstraint(SpringLayout.WEST, moveButtons, pad, SpringLayout.EAST, anchor);
+                increase.revalidate();
+                increase.repaint();
+            }
+        });
+        JButton decrease = new JButton("Decrease pad");
+        decrease.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                pad -= 50;
+                layout.putConstraint(SpringLayout.WEST, moveButtons, pad, SpringLayout.EAST, anchor);
+                increase.revalidate();
+                increase.repaint();
+            }
+        });
 
-        JButton a = new JButton("A");
-        JButton b = new JButton("B");
+        moveButtons.add(decrease);
+        moveButtons.add(increase);
+        add(moveButtons);
 
-        add(a);
-        add(b);
-
-//        layout.putConstraint(SpringLayout.WEST, a, 6, SpringLayout.WEST, this);
-//        layout.putConstraint(SpringLayout.NORTH, a, 6, SpringLayout.NORTH, this);
-//        layout.putConstraint(SpringLayout.NORTH, b, 50, SpringLayout.NORTH, this);
-//        layout.putConstraint(SpringLayout.EAST, b, 150, SpringLayout.EAST, this);
-
-//        layout.putConstraint(SpringLayout.SOUTH, a, 6, SpringLayout.NORTH, b);
-        layout.putConstraint(SpringLayout.NORTH, b, 6, SpringLayout.SOUTH, a);
-
-
-//        layout.putConstraint(SpringLayout.EAST, getContentPane(), 6, SpringLayout.EAST, b);
-//        layout.putConstraint(SpringLayout.SOUTH, getContentPane(), 6, SpringLayout.SOUTH, b);
+        layout.putConstraint(SpringLayout.WEST, moveButtons, pad, SpringLayout.EAST, anchor);
     }
 }
