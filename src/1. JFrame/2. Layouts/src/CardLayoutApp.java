@@ -19,13 +19,46 @@ public class CardLayoutApp extends JFrame {
         JPanel gridBag = new GridBagLayoutDanielVoznyy();
         JPanel spring = new SpringLayoutDanielVoznyy();
 
+        JPanel bothDaniel = new JPanel(new GridLayout(1, 2));
+        bothDaniel.add(new GridBagLayoutDanielVoznyy());
+        bothDaniel.add(new SpringLayoutDanielVoznyy());
+
+        JPanel all = new JPanel(new BorderLayout());
+
+        JPanel allSpring = new SpringLayoutDanielVoznyy();
+        allSpring.setPreferredSize(new Dimension(100, 100));
+        all.add(allSpring, BorderLayout.NORTH);
+
+        JPanel allList = new JPanel();
+        allList.add(new JLabel("GridBagLayout - Daniel"));
+        allList.add(new JLabel("SpringLayout - Daniel"));
+        allList.add(new JLabel("FlowLayout - Enfei"));
+        allList.add(new JLabel("GroupLayout - Enfei"));
+        allList.setPreferredSize(new Dimension(100, 100));
+        all.add(allList, BorderLayout.CENTER);
+
+        JPanel allGrid = new GridBagLayoutDanielVoznyy();
+        allGrid.setPreferredSize(new Dimension(150, 100));
+        all.add(allGrid, BorderLayout.WEST);
+
+        JPanel allGroup = new GridBagLayoutDanielVoznyy();
+        allGroup.setPreferredSize(new Dimension(150, 100));
+        all.add(allGroup, BorderLayout.EAST);
+
+        JPanel allFlow = new SpringLayoutDanielVoznyy();
+        allFlow.setPreferredSize(new Dimension(150, 100)); //TODO set proper dimensions
+        all.add(allFlow, BorderLayout.SOUTH);
+
+
         tabbedPane.addTab("Grid Bag Layout", gridBag);
         tabbedPane.addTab("Spring Layout", spring);
+        tabbedPane.addTab("Both", bothDaniel);
+        tabbedPane.addTab("All", all);
 
         add(tabbedPane, BorderLayout.CENTER);
 
-
-        setSize(400, 400);
+        setMinimumSize(new Dimension(500, 500));
+        setSize(500, 500);
         setVisible(true);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
