@@ -4,8 +4,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- *
- *
  * <h2>Course Info:</h2>
  * ICS4U0 with Krasteva, V.
  *
@@ -13,23 +11,28 @@ import java.awt.event.ActionListener;
  * @version 1 03.29.19
  */
 public class GridBagLayoutDanielVoznyy extends JPanel {
+    private JDialog d;
+    private GridBagConstraints gbc;
+    private GridBagLayout layout;
+
     public GridBagLayoutDanielVoznyy() {
         setLayout(new GridBagLayout());
-        GridBagLayout layout = new GridBagLayout();
+        layout = new GridBagLayout();
         setLayout(layout);
 
-        GridBagConstraints gbc = new GridBagConstraints();
-        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc = new GridBagConstraints();
+        gbc.fill = GridBagConstraints.BOTH;
 
         gbc.weightx = 2;
         gbc.gridx = 0;
         gbc.gridy = 0;
         gbc.anchor = GridBagConstraints.NORTH;
         gbc.weighty = 1;
-        gbc.ipady = 20;
+        gbc.ipady = 25;
 
 
         JButton a = new JButton("A");
+        //passing 'gbc' along with 'a' doing 'layout.setConstraints (a, gbc)', then 'add(a)'
         add(a, gbc);
 
         gbc.weightx = 0.5;
@@ -41,27 +44,29 @@ public class GridBagLayoutDanielVoznyy extends JPanel {
         JButton d = new JButton("Add");
         add(d, gbc);
 
-        JButton ee = new JButton("Add Down");
+        JButton addDown = new JButton("Add Down");
         d.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 gbc.gridx = 3;
                 gbc.gridy = 0;
                 d.setText("Added");
-                add(ee, gbc);
+                add(addDown, gbc);
                 d.removeActionListener(this); //stops someone from pressing the button and calling this method again
             }
         });
 
-        ee.addActionListener(new ActionListener() {
+        addDown.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 gbc.gridwidth = 4;
                 gbc.weighty = 10;
                 gbc.gridx = 0;
-                gbc.ipady = 1;
+                gbc.ipady = 0;
                 gbc.gridy++;
-                ee.setText("Added " + gbc.gridy);
+                addDown.setText("Added " + gbc.gridy);
                 add(new JButton("Button" + gbc.gridy), gbc);
+                revalidate();
+                repaint();
             }
         });
     }
