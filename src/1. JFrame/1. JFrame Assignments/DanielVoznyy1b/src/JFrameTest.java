@@ -60,7 +60,7 @@ public class JFrameTest extends JFrame implements ActionListener {
      * @param ae The action event performed.
      */
     public void actionPerformed(ActionEvent ae) {
-        if (ae.getActionCommand().equals("Quit")) ;
-        dispose();
+        if (ae.getActionCommand().equals("Quit"))
+            dispose();
     }
 }
