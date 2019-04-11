@@ -41,7 +41,7 @@ public class LayoutApp extends JFrame implements ActionListener {
 
         setJMenuBar(menu);
 
-        setMinimumSize(new Dimension(800, 800));
+        setMinimumSize(new Dimension(900, 900));
         setVisible(true);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
     }

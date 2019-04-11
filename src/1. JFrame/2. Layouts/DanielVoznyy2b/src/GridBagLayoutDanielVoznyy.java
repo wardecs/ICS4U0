@@ -45,7 +45,7 @@ public class GridBagLayoutDanielVoznyy extends JPanel implements ActionListener 
         add(topBar, gbc); //passing gbc while adding acts as adding and doing layout.setConstraints(component, gbc);
 
 
-        JButton increaseHeight = new JButton("Click to Increase Height");
+        JButton increaseHeight = new JButton("Increase Height");
         //Contained inside topBar so we change the contents to fill up the entire space in the bar
         gbc.fill = GridBagConstraints.BOTH;
         gbc.ipady = 0;

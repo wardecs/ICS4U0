@@ -39,7 +39,7 @@ public class CardLayoutApp extends JFrame {
         JPanel all = new JPanel(new BorderLayout());
 
         JPanel allSpring = new SpringLayoutDanielVoznyy();
-        allSpring.setPreferredSize(new Dimension(100, 200));
+        allSpring.setPreferredSize(new Dimension(100, 250));
         all.add(allSpring, BorderLayout.NORTH);
 
         JPanel allList = new JPanel(new GridLayout(4, 1));
@@ -47,25 +47,25 @@ public class CardLayoutApp extends JFrame {
         allList.add(new JLabel("SpringLayout - Daniel"));
         allList.add(new JLabel("FlowLayout - Enfei"));
         allList.add(new JLabel("GroupLayout - Enfei"));
-        allList.setPreferredSize(new Dimension(100, 100));
+        allList.setPreferredSize(new Dimension(0, 50));
         all.add(allList, BorderLayout.CENTER);
 
         JPanel allGrid = new GridBagLayoutDanielVoznyy();
-        allGrid.setPreferredSize(new Dimension(250, 100));
+        allGrid.setPreferredSize(new Dimension(400, 50));
         all.add(allGrid, BorderLayout.WEST);
 
-        JPanel allGroup = new GridBagLayoutDanielVoznyy();
-        allGroup.setPreferredSize(new Dimension(250, 100));
+        JPanel allGroup = new GroupLayoutEnfeiZhang();
+        allGroup.setPreferredSize(new Dimension(250, 50));
         all.add(allGroup, BorderLayout.EAST);
 
-        JPanel allFlow = new SpringLayoutDanielVoznyy();
+        JPanel allFlow = new FlowLayoutEnfeiZhang();
         allFlow.setPreferredSize(new Dimension(100, 100)); //TODO set proper dimensions
         all.add(allFlow, BorderLayout.SOUTH);
 
         tabbedPane.addTab("Grid Bag Layout", new GridBagLayoutDanielVoznyy());
         tabbedPane.addTab("Spring Layout", new SpringLayoutDanielVoznyy());
-        tabbedPane.addTab("Flow Layout", new GridBagLayoutDanielVoznyy());
-        tabbedPane.addTab("Group Layout", new SpringLayoutDanielVoznyy());
+        tabbedPane.addTab("Flow Layout", new FlowLayoutEnfeiZhang());
+        tabbedPane.addTab("Group Layout", new GroupLayoutEnfeiZhang());
         tabbedPane.addTab("Both", bothDaniel);
         tabbedPane.addTab("All", all);
 
