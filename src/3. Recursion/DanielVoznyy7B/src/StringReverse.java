@@ -1,28 +1,34 @@
-package src;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class StringReverse {
-    public static void main(String[] args) {
-        String word = "music";
-        System.out.println("The word reversed is " + reverse(word));
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    /*public static void main(String[] args) {
+        List<String> strings = new ArrayList<>();
+        readString(strings);
 
-        String line;
+        reverse(strings);
+    }
+
+    public static void readString(ArrayList<String> strings){
         try {
-            while (!(line = br.readLine()).equals(".")) {
-
+            String line;
+            if(!(line = new BufferedReader(new InputStreamReader(System.in)).readLine()).equals(".")) {
+                strings.add(line);
+                readString(strings);
             }
         } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
-    public static String reverse(String word) {
-        System.out.println(word);
-        if (word.length() <= 1)
-            return word;
-        return reverse(word.substring(1)) + (word.charAt(0));
-    }
+    public static List<String> reverse(List<String> strings) {
+        System.out.println(strings.get(0));
+        if (strings.size() <= 1)
+            return strings;
+        return reverse(strings.subList(1, strings.size())).add(strings.get(0));
+    }*/
 }
