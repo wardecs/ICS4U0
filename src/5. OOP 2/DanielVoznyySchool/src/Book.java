@@ -1,5 +1,5 @@
 /**
- * Book
+ * Books have a title and course name. Students hold Books, but Books have no reference to Students
  *
  * <h2>Course Info</h2>
  * ICS4U0 with Krasteva V.
@@ -10,9 +10,6 @@
 public class Book {
     String title;
     String course;
-
-    public Book() {
-    }
 
     public void setTitle(String title) {
         this.title = title;
