@@ -1,6 +1,14 @@
 import java.util.Scanner;
 
+/**
+ * Driver class for showcasing creation and shuffling of decks
+ */
 public class DeckCardsClient {
+    /**
+     * The method that gets run
+     *
+     * @param args passed arguments
+     */
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         DeckofCards deck1 = new DeckofCards();

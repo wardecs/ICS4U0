@@ -8,20 +8,17 @@
  * @version 24.04.19
  */
 public class VirtualSchoolTester {
+    /**
+     * The method that gets run
+     *
+     * @param args passed arguments
+     */
     public static void main(String[] args) {
         Student student = new Student("Daniel");
         ClassRoom classRoom = new ClassRoom("ICS", "Ms. Krasteva");
 
-        //make a new book
-        Book apTextbook = new Book();
-        apTextbook.setCourse("ICS");
-        apTextbook.setTitle("AP ICS textbook");
-
-        //put it in the locker
-        student.myLocker.putABook(apTextbook);
-
         //student takes the book out
-        student.books[0] = student.myLocker.getABook("ICS");
+        student.myLocker.getABook("ICS");
         System.out.println(student + " now has " + student.books[0] + " on him");
 
         //put the jacket student is wearing into the locker

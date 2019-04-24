@@ -14,10 +14,6 @@ public class DeckofCards {
             myDeck[n] = new Card(faces[n % 13], suits[n / 13]);
         }
     }
-// end constructor
-
-    // method to deal cards
-
 
     public Card deal() {
         if (myCardNum < 52)
@@ -25,7 +21,6 @@ public class DeckofCards {
         else
             return null;
     }
-// end deal() method
 
 
     public void shuffle() {
@@ -38,7 +33,6 @@ public class DeckofCards {
         }
         myCardNum = 0; //now that the cards are shuffled, we should start dealing them from the beginning
     }
-// end shuffle() method
 
     @Override
     public String toString() {
@@ -53,4 +47,3 @@ public class DeckofCards {
         return deck;
     }
 }
-// close class

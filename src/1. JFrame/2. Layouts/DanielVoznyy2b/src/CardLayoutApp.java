@@ -59,7 +59,7 @@ public class CardLayoutApp extends JFrame {
         all.add(allGroup, BorderLayout.EAST);
 
         JPanel allFlow = new FlowLayoutEnfeiZhang();
-        allFlow.setPreferredSize(new Dimension(100, 100)); //TODO set proper dimensions
+        allFlow.setPreferredSize(new Dimension(100, 100));
         all.add(allFlow, BorderLayout.SOUTH);
 
         tabbedPane.addTab("Grid Bag Layout", new GridBagLayoutDanielVoznyy());

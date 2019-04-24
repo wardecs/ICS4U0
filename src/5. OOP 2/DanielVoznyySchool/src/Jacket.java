@@ -21,6 +21,6 @@ public class Jacket {
 
     @Override
     public String toString() {
-        return "Jacket owner: " + owner;
+        return owner + " owns this";
     }
 }

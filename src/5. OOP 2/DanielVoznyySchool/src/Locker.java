@@ -23,6 +23,26 @@ public class Locker {
         this.owner = me;
         this.number = (int) (Math.random() * 1000);
         this.books = new Book[4];
+
+        //make new books
+        Book ics = new Book();
+        ics.setCourse("ICS");
+        ics.setTitle("AP ICS textbook");
+        Book science = new Book();
+        science.setCourse("Science");
+        science.setTitle("Grade 10 Science");
+        Book math = new Book();
+        math.setCourse("Math");
+        math.setTitle("Principles of Mathematics 10");
+        Book history = new Book();
+        history.setCourse("History");
+        history.setTitle("History from 1900");
+
+        //put them in the locker
+        putABook(ics);
+        putABook(science);
+        putABook(math);
+        putABook(history);
     }
 
     /**
@@ -36,11 +56,17 @@ public class Locker {
         for (int i = 0; i < books.length; i++) {
             Book b = books[i];
             if (b.course.equals(course)) {
-                books[i] = null;
-                return b;
+                for (int j = 0; j < owner.books.length; j++) {
+                    if(owner.books[j] == null) {
+                        owner.books[j] = b;
+                        books[i] = null;
+                        return b;
+                    }
+                }
+                throw new IllegalArgumentException("Student doesn't have any more space to carry books");
             }
         }
-        return null;
+        throw new IllegalArgumentException("Book not found");
     }
 
     /**

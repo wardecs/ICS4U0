@@ -14,7 +14,7 @@ public class ClassRoom {
     /**
      * Constructor for the classroom
      *
-     * @param name the name of the class
+     * @param name    the name of the class
      * @param teacher the class' teacher
      */
     public ClassRoom(String name, String teacher) {
@@ -24,13 +24,13 @@ public class ClassRoom {
 
     /**
      * If the student entering the class doesn't have a locker, they get sent to the office, if they have a jacket,
-     * they get sent to their locker to put it back and are not let in, if they have less than a certain number of books,
-     * they are not let in.
+     * they get sent to their locker to put it back and are not let in, lastly it checks if the student has the right book
+     * for this class.
      *
      * @param student the student entering the classroom
      * @return whether the student was let inside
      */
-    Boolean enter(Student student) {
+    boolean enter(Student student) {
         System.out.println("Student " + student + " came into class " + name + " taught by " + teacher);
         if (student.myLocker == null) {
             student.sendToOffice("Get a locker");
@@ -40,10 +40,10 @@ public class ClassRoom {
             student.myLocker.putJacket(student.myJacket); //put jacket back in locker
             return false;
         }
-        if (student.books.length < 2) { //TODO are they supposed to pass the number of books needed?
-            student.sendToOffice("Class " + name + " requires 2 books");
-            return false;
-        }
-        return true;
+        for (Book book : student.books)
+            if (book != null && book.course.equals(name)) //avoid null pointer exception and check the book's course against this class' course
+                return true;
+        student.sendToOffice("Class " + name + " requires its appropriate books");
+        return false;
     }
 }
