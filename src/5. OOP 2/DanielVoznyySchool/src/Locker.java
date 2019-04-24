@@ -20,7 +20,7 @@ public class Locker {
      * @param me the owner of the locker
      */
     public Locker(Student me) {
-        this.owner = me;
+        assignOwner(me);
         this.number = (int) (Math.random() * 1000);
         this.books = new Book[4];
 
@@ -117,6 +117,10 @@ public class Locker {
             this.studentJacket = studentJacket; //put the jacket in locker
         else
             throw new IllegalArgumentException("Jacket is already inside locker");
+    }
+
+    public void assignOwner(Student owner){
+        this.owner = owner;
     }
 
     @Override
