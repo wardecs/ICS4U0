@@ -23,7 +23,7 @@ public class Student {
      */
     public Student(String name) {
         this.name = name;
-        this.number = Double.toString(Math.random() * 3000000);
+        this.number = Integer.toString((int) (Math.random() * 200000000) + 100000000);
         this.myLocker = new Locker(this);
         this.myJacket = new Jacket(this);
         this.books = new Book[4];

@@ -112,10 +112,10 @@ public class Locker {
      * @param studentJacket the Jacket to be put in
      */
     public void putJacket(Jacket studentJacket) {
-        studentJacket.owner.myJacket = null; //remove the jacket from student
-        if (this.studentJacket == null)
+        if (this.studentJacket == null) {
+            studentJacket.owner.myJacket = null; //remove the jacket from student
             this.studentJacket = studentJacket; //put the jacket in locker
-        else
+        }else
             throw new IllegalArgumentException("Jacket is already inside locker");
     }
 
