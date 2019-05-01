@@ -6,8 +6,13 @@
       <sourceFolder url="file://$MODULE_DIR$/src/JFrame/DanielVoznyy1c/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/1. JFrame/2. Layouts/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/3. Recursion/DanielVoznyy7B/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/5. OOP 2/DanielVoznyySchool/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/5. OOP 2/DanielVoznyyCard Deck/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/5. OOP 2/DanielVoznyySchool/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/5. OOP 2/DanielVoznyyCard Deck/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/AP Labs/MagpieActivityStarterCode/activity2" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/AP Labs/MagpieActivityStarterCode/activity3" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/AP Labs/MagpieActivityStarterCode/activity4" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/AP Labs/MagpieActivityStarterCode/activity5" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/AP Labs/Elevans Activity Starter Code/Activity2  Starter Code" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

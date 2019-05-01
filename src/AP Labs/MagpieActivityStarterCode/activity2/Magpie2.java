@@ -46,7 +46,7 @@ public class Magpie2 {
         else if(statement.contains("money"))
             response = "Do you happen to have your credit card information with you?";
         else if(statement.contains("why?"))
-            response = "I'm stuck in Uganda, that's why.";
+            response = "I'm stuck in Uganda, and need help.";
         else if(statement.contains("Uganda"))
             response = "Yeah, that's where I'm at right now!";
         else {
