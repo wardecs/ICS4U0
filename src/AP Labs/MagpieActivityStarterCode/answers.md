@@ -32,16 +32,32 @@ The current system only checks whether the entire sentence contains a certain se
 
 ### Activity 3:
 
-| Iteration | psn  | before | after |
-| --------- | ---- | ------ | ----- |
-| 1         |      |        |       |
-| 2         |      |        |       |
-| 3         |      |        |       |
-| 4         |      |        |       |
-| 5         |      |        |       |
-| 6         |      |        |       |
+`findKeyword("She's my sister", "sister", 0);`
 
+| Iteration            | psn  | before | after |
+| -------------------- | ---- | ------ | ----- |
+| 1 | 9    | " "    | " "   |
 
+`findKeyword("Brother Tom is helpful", "brother", 0);`
+
+| Iteration            | psn  | before | after |
+| -------------------- | ---- | ------ | ----- |
+| 1    | 0    | " "  | " "  |
+
+`findKeyword("I can't catch wild cats.", "cat", 0);`
+
+| Iteration            | psn  | before | after |
+| -------------------- | ---- | ------ | ----- |
+| 1    | 8   | " "  | "c" |
+| 2 | 19 | " " | "s" |
+
+`findKeyword("I know nothing about snow plows.", "no", 0);`
+
+| Iteration            | psn  | before | after |
+| -------------------- | ---- | ------ | ----- |
+| 1    | 3   | "k" | "w" |
+| 2 | 7 | " " | "t" |
+| 3 | 22 | "s" | "w" |
 
 ### Activity 4:
 **Find an example of when this structure does not work well. How can you improve it?**

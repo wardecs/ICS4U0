@@ -13,9 +13,9 @@ public class CardTester {
 		Card heartsThree = new Card("Three", "Hearts", 3);
 
 		if(heartsAce.matches(heartsTwo))
-			System.out.println(heartsAce.toString() + " matches " + heartsTwo);
+			System.out.println(heartsAce.toString() + " matches " + heartsTwo.toString());
 		else
-			System.out.println(heartsAce.toString() + " does not match " + heartsTwo);
+			System.out.println(heartsAce.toString() + " does not match " + heartsTwo.toString());
 
 		int points = 0;
 		points += heartsAce.pointValue() + heartsTwo.pointValue() + heartsThree.pointValue();

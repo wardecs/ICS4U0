@@ -1,5 +1,6 @@
-import java.util.List;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * The ElevensBoard class represents the board in a game of Elevens.
@@ -47,14 +48,12 @@ public class ElevensBoard extends Board {
 	 */
 	@Override
 	public boolean isLegal(List<Integer> selectedCards) {
-		/* *** TO BE MODIFIED IN ACTIVITY 11 *** */
-		if (selectedCards.size() == 2) {
-			return containsPairSum11(selectedCards);
-		} else if (selectedCards.size() == 3) {
-			return containsJQK(selectedCards);
-		} else {
+		if (selectedCards.size() == 2)
+			return findPairSum11(selectedCards).size() > 0;
+		else if (selectedCards.size() == 3)
+			return findJQK(selectedCards).size() > 0;
+		else
 			return false;
-		}
 	}
 
 	/**
@@ -67,9 +66,8 @@ public class ElevensBoard extends Board {
 	 */
 	@Override
 	public boolean anotherPlayIsPossible() {
-		/* *** TO BE MODIFIED IN ACTIVITY 11 *** */
 		List<Integer> cIndexes = cardIndexes();
-		return containsPairSum11(cIndexes) || containsJQK(cIndexes);
+		return findPairSum11(cIndexes).size() > 0 || findJQK(cIndexes).size() > 0;
 	}
 
 	/**
@@ -80,18 +78,12 @@ public class ElevensBoard extends Board {
 	 * @return a list of the indexes of an 11-pair, if an 11-pair was found;
 	 *         an empty list, if an 11-pair was not found.
 	 */
-	private boolean containsPairSum11(List<Integer> selectedCards) {
-		/* *** TO BE CHANGED INTO findPairSum11 IN ACTIVITY 11 *** */
-		for (int sk1 = 0; sk1 < selectedCards.size(); sk1++) {
-			int k1 = selectedCards.get(sk1).intValue();
-			for (int sk2 = sk1 + 1; sk2 < selectedCards.size(); sk2++) {
-				int k2 = selectedCards.get(sk2).intValue();
-				if (cardAt(k1).pointValue() + cardAt(k2).pointValue() == 11) {
-					return true;
-				}
-			}
-		}
-		return false;
+	private List<Integer> findPairSum11(List<Integer> selectedCards) {
+		for (int cIndex1 : selectedCards)
+			for (int cIndex2 : selectedCards)
+				if (cIndex1 != cIndex2 && cardAt(cIndex1).pointValue() + cardAt(cIndex2).pointValue() == 11)
+					return Arrays.asList(cIndex1, cIndex2);
+		return new ArrayList<Integer>();
 	}
 
 	/**
@@ -102,22 +94,18 @@ public class ElevensBoard extends Board {
 	 * @return a list of the indexes of a JQK, if a JQK was found;
 	 *         an empty list, if a JQK was not found.
 	 */
-	private boolean containsJQK(List<Integer> selectedCards) {
-		/* *** TO BE CHANGED INTO findJQK IN ACTIVITY 11 *** */
-		boolean foundJack = false;
-		boolean foundQueen = false;
-		boolean foundKing = false;
-		for (Integer kObj : selectedCards) {
-			int k = kObj.intValue();
-			if (cardAt(k).rank().equals("jack")) {
-				foundJack = true;
-			} else if (cardAt(k).rank().equals("queen")) {
-				foundQueen = true;
-			} else if (cardAt(k).rank().equals("king")) {
-				foundKing = true;
-			}
-		}
-		return foundJack && foundQueen && foundKing;
+	private List<Integer> findJQK(List<Integer> selectedCards) {
+		int hasJack = -1, hasQueen = -1, hasKing = -1;
+		for (int cIndex : selectedCards)
+			if (cardAt(cIndex).rank().equals("jack"))
+				hasJack = cIndex;
+			else if (cardAt(cIndex).rank().equals("queen"))
+				hasQueen = cIndex;
+			else if (cardAt(cIndex).rank().equals("king"))
+				hasKing = cIndex;
+		if (hasJack > -1 && hasQueen > -1 && hasKing > -1)
+			return Arrays.asList(hasJack, hasQueen, hasKing);
+		return new ArrayList<Integer>();
 	}
 
 	/**
@@ -125,8 +113,7 @@ public class ElevensBoard extends Board {
 	 * @return true if a legal play was found (and made); false othewise.
 	 */
 	public boolean playIfPossible() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 11 *** */
-		return false; // REPLACE !
+		return playPairSum11IfPossible() || playJQKIfPossible();
 	}
 
 	/**
@@ -136,8 +123,12 @@ public class ElevensBoard extends Board {
 	 * @return true if an 11-pair play was found (and made); false othewise.
 	 */
 	private boolean playPairSum11IfPossible() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 11 *** */
-		 return false; // REPLACE !
+		List<Integer> play = findPairSum11(cardIndexes());
+		if (isLegal(play)) {
+			replaceSelectedCards(play);
+			return true;
+		}
+		return false;
 	}
 
 	/**
@@ -147,7 +138,11 @@ public class ElevensBoard extends Board {
 	 * @return true if a JQK play was found (and made); false othewise.
 	 */
 	private boolean playJQKIfPossible() {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 11 *** */
-		return false; // REPLACE !
+		List<Integer> play = findJQK(cardIndexes());
+		if (isLegal(play)) {
+			replaceSelectedCards(play);
+			return true;
+		}
+		return false;
 	}
 }

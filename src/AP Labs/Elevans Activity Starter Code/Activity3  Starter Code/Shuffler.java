@@ -7,7 +7,7 @@ public class Shuffler {
 	 * The number of consecutive shuffle steps to be performed in each call
 	 * to each sorting procedure.
 	 */
-	private static final int SHUFFLE_COUNT = 1;
+	private static final int SHUFFLE_COUNT = 10;
 
 
 	/**
@@ -47,10 +47,26 @@ public class Shuffler {
 	 * Apply a "perfect shuffle" to the argument.
 	 * The perfect shuffle algorithm splits the deck in half, then interleaves
 	 * the cards in one half with the cards in the other.
-	 * @param values is an array of integers simulating cards to be shuffled.
+	 * @param cards is an array of integers simulating cards to be shuffled.
 	 */
-	public static void perfectShuffle(int[] values) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
+	public static void perfectShuffle(int[] cards) {
+		int[] shuffled = new int[cards.length];
+		int mid = (cards.length) / 2;
+
+		int k = 0; //put left side into even positions
+		for (int j = 0; j < mid; j ++) {
+			shuffled[k] = cards[j];
+			k += 2;
+		}
+
+		k = 1; //put right side into odd positions
+		for (int j = mid; j < cards.length; j ++) {
+			shuffled[k] = cards[j];
+			k += 2;
+		}
+
+		for (k = 0; k < cards.length; k++) //copy elements back to cards array
+			cards[k] = shuffled[k];
 	}
 
 	/**
@@ -62,9 +78,14 @@ public class Shuffler {
 	 * selected and add it to the selected cards.
 	 * An efficient version of this algorithm makes use of arrays to avoid
 	 * searching for an as-yet-unselected card.
-	 * @param values is an array of integers simulating cards to be shuffled.
+	 * @param cards is an array of integers simulating cards to be shuffled.
 	 */
-	public static void selectionShuffle(int[] values) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
+	public static void selectionShuffle(int[] cards) {
+		for (int k = cards.length - 1; k > 0; k--) {
+			int r = (int) (Math.random() * (k + 1)); //generate random integer between 0 and k inclusive
+			int temp = cards[r];
+			cards[r] = cards[k];
+			cards[k] = temp;
+		}
 	}
 }
