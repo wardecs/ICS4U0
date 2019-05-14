@@ -1,9 +1,11 @@
 import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-import javax.swing.ImageIcon;
 import java.awt.*;
-import java.io.*;
-import java.awt.geom.*;
+import java.awt.geom.AffineTransform;
+import java.awt.geom.Point2D;
+import java.awt.geom.Rectangle2D;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
 /**
  * A class that represents a simple picture.  A simple picture may have
