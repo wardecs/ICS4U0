@@ -80,7 +80,7 @@ Buggy5: `isEmpty` once again checks for `size < 0`
 
 1. List all possible plays for the board 5♠ 4♥ 2♦ 6♣ A♠ J♥ K♦ 5♣ 2♠
 
-`5♠ + 6♣ = 11`. `5♣ + 6♣ = 11`. `A♠ & J♥ & K♦` is a triplet.
+`5♠ + 6♣ = 11`, and `5♣ + 6♣ = 11`.
 
 2. If the deck is empty and the board has three cards left, must they be J, Q, and K? Why or why not?
 
@@ -199,9 +199,9 @@ Because the size is already defined in the array of cards.
 Because all the games will be selecting and removing the cards in almost identical ways.
 
 1. Another way to create “IS-A” relationships is by implementing interfaces. Suppose that instead of creating an abstract `Board` class, we created the following `Board` interface, and had
-  `ElevensBoard` implement it. Would this new scheme allow the Elevens GUI to call `isLegal`
-  and `anotherPlayIsPossible` polymorphically? Would this alternate design work as well as
-  the abstract Board class design? Why or why not?
+    `ElevensBoard` implement it. Would this new scheme allow the Elevens GUI to call `isLegal`
+    and `anotherPlayIsPossible` polymorphically? Would this alternate design work as well as
+    the abstract Board class design? Why or why not?
 
 ```Java
 public interface Board {
