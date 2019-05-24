@@ -62,3 +62,6 @@ The current system only checks whether the entire sentence contains a certain se
 ### Activity 4:
 **Find an example of when this structure does not work well. How can you improve it?**
 
+When saying something like "I think you are nice", the structure replies with "Why do you think me?" It would be possible to fix this by adding more conditions that check whether the user is using keywords like "think" within "I *something* you."
+
+ 
